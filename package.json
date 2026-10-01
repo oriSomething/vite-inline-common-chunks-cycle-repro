@@ -1,0 +1,15 @@
+{
+  "name": "inline-common-chunks-cycles",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm check:source-cycles && vite build && pnpm check:bundle-cycles",
+    "check:bundle-cycles": "knip --config knip.config.js --include cycles --no-gitignore --no-progress",
+    "check:source-cycles": "knip --config knip.source.config.js --include cycles --no-gitignore --no-progress"
+  },
+  "devDependencies": {
+    "knip": "6.35.0",
+    "rolldown": "1.2.12",
+    "vite": "8.3.1"
+  }
+}
